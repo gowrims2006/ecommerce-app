@@ -9,14 +9,13 @@ type Product = {
 }
 
 type CartItem = Product & { quantity: number }
-
 const products: Product[] = [
-  { id: 1, name: "iPhone 15", price: 70000, image: "📱" },
-  { id: 2, name: "Nike Shoes", price: 5000, image: "👟" },
-  { id: 3, name: "Headphones", price: 3000, image: "🎧" },
-  { id: 4, name: "Laptop", price: 60000, image: "💻" },
-  { id: 5, name: "Watch", price: 15000, image: "⌚" },
-  { id: 6, name: "Backpack", price: 2000, image: "🎒" },
+  { id: 1, name: "iPhone 15", price: 70000, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" },
+  { id: 2, name: "Nike Shoes", price: 5000, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" },
+  { id: 3, name: "Headphones", price: 3000, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" },
+  { id: 4, name: "Laptop", price: 60000, image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" },
+  { id: 5, name: "Watch", price: 15000, image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" },
+  { id: 6, name: "Backpack", price: 2000, image: "https://images.unsplash.com/photo-1553062407-98eeb64c32a3?w=400" },
 ]
 
 export default function Home() {
@@ -94,6 +93,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {products.map(product => (
           <div key={product.id} className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+            <img src={product.image} className="w-full h-48 object-cover rounded mb-4" />
             <div className="text-6xl mb-4 text-center">{product.image}</div>
             <h3 className="text-xl font-bold text-black mb-2">{product.name}</h3>
             <p className="text-2xl font-bold text-purple-600 mb-4">₹{product.price}</p>
