@@ -16,7 +16,7 @@ const products: Product[] = [
   { id: 3, name: "Headphones", price: 3000, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" },
   { id: 4, name: "Laptop", price: 60000, image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" },
   { id: 5, name: "Watch", price: 15000, image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" },
-  { id: 6, name: "Backpack", price: 2000, image: "https://images.unsplash.com/photo-1622560480605-d83c3b8dba7b?w=400" },
+  { id: 6, name: "Backpack", price: 2000, image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400" },
 ]
 
 export default function Home() {
