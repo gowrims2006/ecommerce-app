@@ -9,6 +9,7 @@ type Product = {
 }
 
 type CartItem = Product & { quantity: number }
+
 const products: Product[] = [
   { id: 1, name: "iPhone 15", price: 70000, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" },
   { id: 2, name: "Nike Shoes", price: 5000, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" },
@@ -68,7 +69,7 @@ export default function Home() {
             <>
               {cart.map(item => (
                 <div key={item.id} className="flex justify-between items-center border-b py-2 text-black">
-                  <span>{item.image} {item.name} x {item.quantity}</span>
+                  <span>{item.name} x {item.quantity}</span>
                   <div>
                     <span className="font-bold mr-4">₹{item.price * item.quantity}</span>
                     <button onClick={() => removeFromCart(item.id)} className="text-red-500 font-bold">Remove</button>
@@ -93,8 +94,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {products.map(product => (
           <div key={product.id} className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-            <img src={product.image} className="w-full h-48 object-cover rounded mb-4" />
-            <div className="text-6xl mb-4 text-center">{product.image}</div>
+            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded mb-4" />
             <h3 className="text-xl font-bold text-black mb-2">{product.name}</h3>
             <p className="text-2xl font-bold text-purple-600 mb-4">₹{product.price}</p>
             <button
